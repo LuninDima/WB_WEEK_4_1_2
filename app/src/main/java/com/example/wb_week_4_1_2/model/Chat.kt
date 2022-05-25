@@ -10,11 +10,6 @@ import kotlin.random.Random
 data class Chat(val id: Int, var image: Int, var title: String, var chatTexts: List<ChatTexts>, var timeLastMessage: String, var countMessage: Int) : Parcelable
 var listChat = arrayListOf<Chat>()
 
-
-
-fun getListChatsUpdate2(): List<Chat>{
-    return listChat
-}
     fun getListChats(): List<Chat>{
     for (i in 1..10){
        var random = Random.nextInt(100)

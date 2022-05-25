@@ -9,6 +9,4 @@ interface Repository {
 
     fun addChat(chat:Chat)
 
-    fun getListChatsUpdate(): List<Chat>
-
 }

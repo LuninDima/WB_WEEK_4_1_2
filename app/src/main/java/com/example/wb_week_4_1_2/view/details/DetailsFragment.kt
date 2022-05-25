@@ -10,19 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.wb_week_4_1_2.R
 import com.example.wb_week_4_1_2.databinding.FragmentDetailsBinding
-import com.example.wb_week_4_1_2.databinding.FragmentMainBinding
-import com.example.wb_week_4_1_2.model.Chat
-import com.example.wb_week_4_1_2.model.ChatTexts
 import com.example.wb_week_4_1_2.view.details.DetailsFragmentAdapter
-import com.example.wb_week_4_1_2.view.main.MainFragment
-import com.example.wb_week_4_1_2.view.main.MainFragmentAdapter
 import com.example.wb_week_4_1_2.viewmodel.AppStateListChatTexts
-import com.example.wb_week_4_1_2.viewmodel.AppStateListChats
 import com.example.wb_week_4_1_2.viewmodel.DetailsViewModel
-import com.example.wb_week_4_1_2.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_details.*
-import kotlinx.android.synthetic.main.fragment_details_recycler_item.*
 
 class DetailsFragment : Fragment() {
     private var _binding: FragmentDetailsBinding? = null

@@ -1,14 +1,10 @@
 package com.example.wb_week_4_1_2.view.details
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import android.widget.TextView
-
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wb_week_4_1_2.R
-
 import com.example.wb_week_4_1_2.model.ChatTexts
 
 

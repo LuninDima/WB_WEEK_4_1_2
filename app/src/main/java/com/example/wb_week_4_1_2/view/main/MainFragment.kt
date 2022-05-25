@@ -3,7 +3,6 @@ package com.example.wb_week_4_1_2.view.main
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,13 +11,9 @@ import com.example.wb_week_4_1_2.R
 import com.example.wb_week_4_1_2.databinding.FragmentMainBinding
 import com.example.wb_week_4_1_2.model.Chat
 import com.example.wb_week_4_1_2.model.getListChatTexts
-import com.example.wb_week_4_1_2.model.listChat
 import com.example.wb_week_4_1_2.view.DetailsFragment
 import com.example.wb_week_4_1_2.viewmodel.AppStateListChats
 import com.example.wb_week_4_1_2.viewmodel.MainViewModel
-
-
-
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -63,11 +58,12 @@ class MainFragment : Fragment() {
 
     private fun swipeToRefresh(){
         binding.mainSwipeToRefresh.setOnRefreshListener {
-            var chat = Chat(100, R.drawable.image, "Заголовок нового чата", getListChatTexts(), "12:06", 10)
-            viewModel.updateChat(chat)
-            viewModel.addChat(chat)
+            var chat1 = Chat(1, R.drawable.image, "Обновлено через Diffutil", getListChatTexts(), "12:06", 10)
+            var chat2 = Chat(1, R.drawable.image, "Добавлено через Diffutil", getListChatTexts(), "12:06", 10)
+
+            viewModel.updateChat(chat1)
+            viewModel.addChat(chat2)
             viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
-            viewModel.getListChatsUpdate()
             binding.mainSwipeToRefresh.isRefreshing = false
         }
 

@@ -11,23 +11,22 @@ import com.example.wb_week_4_1_2.R
 import com.example.wb_week_4_1_2.model.Chat
 import com.example.wb_week_4_1_2.utils.DiffUtils
 
-
 class MainFragmentAdapter(
     private var onItemViewClickListener:
     MainFragment.OnItemViewClickListener?
 ) :
     RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {
 
-    private var chatData: List<Chat> = emptyList()
+        private var chatData = emptyList<Chat>()
 
     private lateinit var mDiffResult: DiffUtil.DiffResult
 
     fun setChatData(data: List<Chat>) {
-        mDiffResult = DiffUtil.calculateDiff(DiffUtils(chatData, data))
+         val chatListData = chatData.toMutableList()
+        chatListData.clear()
+        mDiffResult = DiffUtil.calculateDiff(DiffUtils(data, chatListData))
         chatData = data
         mDiffResult.dispatchUpdatesTo(this)
-
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(
@@ -52,7 +51,6 @@ class MainFragmentAdapter(
     fun removeListener() {
         onItemViewClickListener = null
     }
-
 
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(chatData: Chat) {
