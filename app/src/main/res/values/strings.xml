@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Messenger</string>
+
+    <string name="error">Error</string>
+    <string name="reload">Reload</string>
+    <string name="success">Success</string>
+    <string name="load">Load</string>
+
+
+
+</resources>
